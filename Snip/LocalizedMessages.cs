@@ -1,6 +1,6 @@
 ﻿#region File Information
 /*
- * Copyright (C) 2018-2021 David Rudie
+ * Copyright (C) 2018-2022 David Rudie
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,6 +24,7 @@ namespace Winter
     {
         public static string SnipForm { get; set; }
         public static string NewVersionAvailable { get; set; }
+        public static string NoPlayer { get; set; }
         public static string Spotify { get; set; }
         public static string Itunes { get; set; }
         public static string SwitchedToPlayer { get; set; }

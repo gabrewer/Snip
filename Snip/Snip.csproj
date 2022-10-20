@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Winter</RootNamespace>
     <AssemblyName>Snip</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -127,6 +127,7 @@
       <DependentUpon>OutputFormat.cs</DependentUpon>
     </Compile>
     <Compile Include="MediaPlayer.cs" />
+    <Compile Include="Players\NoPlayer.cs" />
     <Compile Include="Players\Spotify.cs" />
     <Compile Include="Players\Itunes.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

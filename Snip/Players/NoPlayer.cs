@@ -1,6 +1,6 @@
 ﻿#region File Information
 /*
- * Copyright (C) 2012-2022 David Rudie
+ * Copyright (C) 2022 David Rudie
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,26 +18,15 @@
  */
 #endregion
 
+using System.Web.UI.WebControls;
+
 namespace Winter
 {
-    using System;
-    using System.Runtime.InteropServices;
-    using System.Text;
-
-    internal static class UnsafeNativeMethods
+    internal sealed class NoPlayer : MediaPlayer
     {
-        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        internal static extern bool RegisterHotKey(
-            [In] [Optional] IntPtr windowHandle,
-            [In] int id,
-            [In] uint modifier,
-            [In] uint key);
-
-        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        internal static extern bool UnregisterHotKey(
-            [In] [Optional] IntPtr windowHandle,
-            [In] int id);
+        public override void Unload()
+        {
+            base.Unload();
+        }
     }
 }
