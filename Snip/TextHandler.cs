@@ -75,21 +75,21 @@ namespace Winter
 
                 if (Globals.EmptyFileIfNoTrackPlaying)
                 {
-                    File.WriteAllText(@Application.StartupPath + @"\Snip.txt", string.Empty);
+                    File.WriteAllText(Globals.FilePath + @"\Snip.txt", string.Empty);
                 }
                 else
                 {
-                    File.WriteAllText(@Application.StartupPath + @"\Snip.txt", text);
+                    File.WriteAllText(Globals.FilePath + @"\Snip.txt", text);
                 }
 
                 if (Globals.EmptyFileIfNoTrackPlaying)
                 {
                     if (Globals.SaveSeparateFiles)
                     {
-                        File.WriteAllText(@Application.StartupPath + @"\Snip_Album.txt", string.Empty);
-                        File.WriteAllText(@Application.StartupPath + @"\Snip_Artist.txt", string.Empty);
-                        File.WriteAllText(@Application.StartupPath + @"\Snip_Track.txt", string.Empty);
-                        File.WriteAllText(@Application.StartupPath + @"\Snip_TrackId.txt", string.Empty);
+                        File.WriteAllText(Globals.FilePath + @"\Snip_Album.txt", string.Empty);
+                        File.WriteAllText(Globals.FilePath + @"\Snip_Artist.txt", string.Empty);
+                        File.WriteAllText(Globals.FilePath + @"\Snip_Track.txt", string.Empty);
+                        File.WriteAllText(Globals.FilePath + @"\Snip_TrackId.txt", string.Empty);
                     }
                 }
             }
@@ -105,7 +105,7 @@ namespace Winter
                 SetNotifyIconText(text);
 
                 // Write the song title and artist to a text file.
-                File.WriteAllText(@Application.StartupPath + @"\Snip.txt", text);
+                File.WriteAllText(Globals.FilePath + @"\Snip.txt", text);
 
                 // Display a popup message of the track.
                 if (Globals.DisplayTrackPopup)
@@ -166,7 +166,7 @@ namespace Winter
                 SetNotifyIconText(output);
 
                 // Write the song title and artist to a text file.
-                File.WriteAllText(@Application.StartupPath + @"\Snip.txt", output);
+                File.WriteAllText(Globals.FilePath + @"\Snip.txt", output);
 
                 // Display a popup message of the track.
                 if (Globals.DisplayTrackPopup)
@@ -183,7 +183,7 @@ namespace Winter
                         artistOutput = artistOutput.Replace(Globals.ArtistVariableUppercase, artist.ToUpper(CultureInfo.CurrentCulture));
                         artistOutput = artistOutput.Replace(Globals.ArtistVariableLowercase, artist.ToLower(CultureInfo.CurrentCulture));
                         artistOutput = artistOutput.Replace(Globals.ArtistVariable, artist);
-                        File.WriteAllText(@Application.StartupPath + @"\Snip_Artist.txt", artistOutput);
+                        File.WriteAllText(Globals.FilePath + @"\Snip_Artist.txt", artistOutput);
                     }
 
                     string trackOutput = Globals.TrackFormat;
@@ -192,7 +192,7 @@ namespace Winter
                         trackOutput = trackOutput.Replace(Globals.TrackVariableUppercase, title.ToUpper(CultureInfo.CurrentCulture));
                         trackOutput = trackOutput.Replace(Globals.TrackVariableLowercase, title.ToLower(CultureInfo.CurrentCulture));
                         trackOutput = trackOutput.Replace(Globals.TrackVariable, title);
-                        File.WriteAllText(@Application.StartupPath + @"\Snip_Track.txt", trackOutput);
+                        File.WriteAllText(Globals.FilePath + @"\Snip_Track.txt", trackOutput);
                     }
 
                     string albumOutput = Globals.AlbumFormat;
@@ -201,17 +201,17 @@ namespace Winter
                         albumOutput = albumOutput.Replace(Globals.AlbumVariableUppercase, album.ToUpper(CultureInfo.CurrentCulture));
                         albumOutput = albumOutput.Replace(Globals.AlbumVariableLowercase, album.ToLower(CultureInfo.CurrentCulture));
                         albumOutput = albumOutput.Replace(Globals.AlbumVariable, album);
-                        File.WriteAllText(@Application.StartupPath + @"\Snip_Album.txt", albumOutput);
+                        File.WriteAllText(Globals.FilePath + @"\Snip_Album.txt", albumOutput);
                     }
 
-                    File.WriteAllText(@Application.StartupPath + @"\Snip_TrackId.txt", trackId);
-                    File.WriteAllText(@Application.StartupPath + @"\Snip_Metadata.json", json);
+                    File.WriteAllText(Globals.FilePath + @"\Snip_TrackId.txt", trackId);
+                    File.WriteAllText(Globals.FilePath + @"\Snip_Metadata.json", json);
                 }
 
                 // If saving track history is enabled, append that information to a separate file.
                 if (Globals.SaveHistory)
                 {
-                    File.AppendAllText(@Application.StartupPath + @"\Snip_History.txt", output + Environment.NewLine);
+                    File.AppendAllText(Globals.FilePath + @"\Snip_History.txt", output + Environment.NewLine);
                 }
             }
         }

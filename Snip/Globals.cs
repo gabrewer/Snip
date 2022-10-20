@@ -74,6 +74,8 @@ namespace Winter
 
         public static bool RewriteUpdatedOutputFormat { get; set; }
 
+        public static string FilePath { get; set; }
+
         #endregion
 
         #region Enumerations

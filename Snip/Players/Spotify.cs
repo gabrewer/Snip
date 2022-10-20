@@ -282,7 +282,7 @@ namespace Winter
 
                             // If the track ID matches something we've already cached, let's pull that data from
                             // the cache instead of downloading it again.
-                            
+
                             /* This is pointless at the moment since you get all of the metadata when checking
                              * if anything is playing already anyway.
                             if (Globals.CacheSpotifyMetadata)
@@ -372,7 +372,7 @@ namespace Winter
         {
             string albumId = jsonSummary.id;
 
-            string artworkDirectory = @Application.StartupPath + @"\SpotifyArtwork";
+            string artworkDirectory = Globals.FilePath + @"\SpotifyArtwork";
             string artworkImagePath = string.Format(CultureInfo.InvariantCulture, @"{0}\{1}.jpg", artworkDirectory, albumId);
 
             if (!Directory.Exists(artworkDirectory))
@@ -526,7 +526,7 @@ namespace Winter
         {
             string json = string.Empty;
 
-            string metadataDirectory = @Application.StartupPath + @"\SpotifyMetadata";
+            string metadataDirectory = Globals.FilePath + @"\SpotifyMetadata";
             string metadataJsonPath = string.Format(CultureInfo.InvariantCulture, @"{0}\{1}.json", metadataDirectory, trackId);
 
             if (!Directory.Exists(metadataDirectory))

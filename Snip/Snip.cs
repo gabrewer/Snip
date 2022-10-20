@@ -44,6 +44,7 @@ namespace Winter
             // Immediately set all of the localization
             SetLocalizedMessages();
 
+            Globals.FilePath = @"D:\Users\greg.brewer\Documents\Twitch\Snip";
             Globals.DefaultTrackFormat = LocalizedMessages.TrackFormat;
             Globals.DefaultSeparatorFormat = " " + LocalizedMessages.SeparatorFormat + " ";
             Globals.DefaultArtistFormat = LocalizedMessages.ArtistFormat;
@@ -253,10 +254,6 @@ namespace Winter
                 case Globals.MediaPlayerSelection.Spotify:
                     Globals.CurrentPlayer = new Spotify();
                     playerName = LocalizedMessages.Spotify;
-                    break;
-                case Globals.MediaPlayerSelection.Itunes:
-                    Globals.CurrentPlayer = new Itunes();
-                    playerName = LocalizedMessages.Itunes;
                     break;
                 default:
                     break;
